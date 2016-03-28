@@ -11,7 +11,23 @@
 
 package com.yllyx.clubs.service.user;
 
+import com.yllyx.clubs.entity.User;
+
 public interface IUserService
 {
     int getByUserId(String userId);
+
+    boolean addUser(User user);
+
+    boolean invalidByName(String name);
+
+    boolean invalidByNamePasswd(String name, String passwd);
+
+    boolean invalidByEmail(String email);
+
+    boolean invalidByEmailPasswd(String email, String passwd);
+
+    boolean invalidByTelphone(String telphone);
+
+    boolean invalidByTelphonePasswd(String telphone, String passwd);
 }

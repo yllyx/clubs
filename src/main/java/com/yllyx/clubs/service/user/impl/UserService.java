@@ -16,11 +16,20 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.yllyx.clubs.entity.User;
+import com.yllyx.clubs.logic.user.IUserLogic;
 import com.yllyx.clubs.service.user.IUserService;
 
 @Path("UserService")
+@Service
 public class UserService implements IUserService
 {
+
+    @Autowired
+    IUserLogic userLogic;
 
     @Override
     @GET
@@ -30,6 +39,54 @@ public class UserService implements IUserService
     {
         // TODO Auto-generated method stub
         return 0;
+    }
+
+    @Override
+    public boolean addUser(User user)
+    {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+    @Override
+    public boolean invalidByName(String name)
+    {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+    @Override
+    public boolean invalidByNamePasswd(String name, String passwd)
+    {
+        return userLogic.invalidByNamePasswd(name, passwd);
+    }
+
+    @Override
+    public boolean invalidByEmail(String email)
+    {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+    @Override
+    public boolean invalidByEmailPasswd(String email, String passwd)
+    {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+    @Override
+    public boolean invalidByTelphone(String telphone)
+    {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+    @Override
+    public boolean invalidByTelphonePasswd(String telphone, String passwd)
+    {
+        // TODO Auto-generated method stub
+        return false;
     }
 
 }
